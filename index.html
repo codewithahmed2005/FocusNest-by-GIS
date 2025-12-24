@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FocusNest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>FocusNest</h1>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="features.html">More Features</a>
+            <button id="themeToggle" class="theme-btn">
+                <span id="themeIcon">🌙</span> Dark
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Stay Focused. Stay Organized.</h1>
+        <p>FocusNest helps you manage tasks, focus time and notes — all in one simple, offline web app.</p>
+        <h2>🚀 Premium Version Coming Soon</h2>
+        <p>Advanced productivity modes, customization, themes and insights are under development.</p>
+        <section class="container">
+            <div class="card"><h2>✔ Smart To-Do</h2><p>Plan, edit and complete daily tasks easily.</p></div>
+            <div class="card"><h2>✔ Focus Timer</h2><p>Custom timer with alarm, snooze and notifications.</p></div>
+            <div class="card"><h2>✔ Quick Notes</h2><p>Write notes instantly. Saved offline.</p></div>
+        </section>
+    </section>
+
+    <main class="container-child">
+        <!-- TODO -->
+        <section class="card">
+            <h2>To-Do List</h2>
+            <input id="taskInput" type="text" placeholder="Add a task">
+            <button id="addTaskBtn">Add</button>
+            <ul id="taskList"></ul>
+        </section>
+
+        <!-- TIMER SECTION -->
+        <section class="card center">
+            <h2>Focus Timer</h2>
+            <div id="timer">25:00</div>
+            <div class="timer-controls">
+                <button id="addTime5Btn">+5 min</button>
+                <button id="addTimeMinus5Btn">-5 min</button>
+            </div>
+            <button id="startPauseBtn">Start</button>
+            <button id="resetTimerBtn">Reset</button>
+            
+            <!-- CUSTOM RINGTONES SECTION -->
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                <h3 style="margin-bottom: 10px;">🎵 Custom Alarm Sound</h3>
+                
+                <!-- File Upload -->
+                <div style="margin: 15px 0;">
+                    <label id="fileUploadBtn" class="file-upload-btn">📁 Choose Ringtone File</label>
+                    <input type="file" id="ringtoneUpload" accept="audio/*" style="display: none;">
+                    <div id="selectedFileName" style="margin-top: 5px; font-size: 13px; color: var(--text-muted);">No file selected</div>
+                </div>
+                
+                <!-- Uploaded Ringtone Info -->
+                <div id="customRingtoneInfo" style="display: none; margin: 10px 0; padding: 10px; background: rgba(99, 102, 241, 0.05); border-radius: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>Custom Ringtone:</strong>
+                            <div id="ringtoneName" style="font-size: 14px;"></div>
+                        </div>
+                        <button id="playCustomRingtoneBtn" style="padding: 5px 10px; font-size: 12px;">▶ Play</button>
+                    </div>
+                </div>
+                
+                <!-- Default Browser Option -->
+                <div style="margin: 15px 0; padding: 10px; background: rgba(99, 102, 241, 0.05); border-radius: 10px;">
+                    <label style="display: flex; align-items: center; gap: 10px;">
+                        <input type="radio" name="alarmType" id="useBrowserSound" checked>
+                        <span>Use Browser Default Sound</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; margin-top: 8px;">
+                        <input type="radio" name="alarmType" id="useCustomSound">
+                        <span>Use Custom Ringtone</span>
+                    </label>
+                </div>
+                
+                <!-- Volume Control -->
+                <div class="volume-control" style="margin-top: 15px;">
+                    <span>🔊 Volume:</span>
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70">
+                    <span id="volumeValue" class="volume-value">70%</span>
+                </div>
+                
+                <button id="testAlarmBtn" class="secondary" style="margin-top: 15px; width: 100%;">🔔 Test Alarm Sound</button>
+                
+                <div style="margin-top: 15px; font-size: 12px; color: var(--text-muted);">
+                    <p>💡 <strong>Supported formats:</strong> MP3, WAV, OGG, M4A (max 5MB)</p>
+                    <p>⚠️ <strong>Note:</strong> File is stored locally in your browser only</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTES -->
+        <section class="card">
+            <h2>Quick Notes</h2>
+            <textarea id="notes" placeholder="Write notes here..."></textarea>
+            <button id="addNoteBtn">Add Note</button>
+            <div id="notesList" class="notes-container"></div>
+        </section>
+    </main>
+    <!-- Existing code... -->
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    🪺 FocusNest
+                </div>
+                <p class="footer-tagline">
+                    Your personal productivity sanctuary. Stay focused, stay organized.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html">🏠 Home</a>
+                <a href="services.html">📦 Services</a>
+                <a href="about.html">📖 About</a>
+                <a href="features.html">🚀 More Features</a>
+            </div>
+            
+            <div class="footer-powered">
+                <span>Powered by</span>
+                <span class="gis-badge">GIS • Grow In Sky</span>
+                <span>• A Product Innovation Studio</span>
+            </div>
+            
+            <div class="footer-copyright">
+                © 2025 FocusNest by GIS. All rights reserved. • Made with ❤️ for productive minds.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <script src="script.js"></script>
+</body>
+</html>
